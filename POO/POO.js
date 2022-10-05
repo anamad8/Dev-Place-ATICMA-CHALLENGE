@@ -32,60 +32,44 @@ class Password {
         let minusculas = 0;
         let numeros = 0;
 
-		for (let i = 0; i < this.longitud; i++) {
-			if (this.contraseña.charAt(i) >= 'A' && this.contraseña.charAt(i) <= 'Z')
+		// console.log(this._longitud)
+
+		for (let i = 0; i < this._longitud; i++) {
 				mayusculas++;
-			if (this.contraseña.charAt(i) >= 'a' && this.contraseña.charAt(i) <= 'z')
+			if (this._contraseña.charAt(i) >= 'a' && this._contraseña.charAt(i) <= 'z')
 				minusculas++;
-			if (this.contraseña.charAt(i) >= '0' && this.contraseña.charAt(i) <= '9')
+			if (this._contraseña.charAt(i) >= '0' && this._contraseña.charAt(i) <= '9')
 				numeros++;
 		}
-		return (mayusculas > 2 && minusculas > 1 && numeros > 3)
+		return (mayusculas >= 2 && minusculas >= 1 && numeros >= 3)
 				? true : false;
 	}   
 
     generarPassword(){
-        let contraseña = "";
-		for (let i = 0; i < this.longitud; i++) {
+        let caracteres = "qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM123456789"
+		let tam = 8;
+		let pass = "";
 
-			switch ((int) (Math.random() * 3)) {
-			case 0:
-				contraseña += (char) (Math.random() * 26 + 'A');
-				break;
-			case 1:
-				contraseña += (char) (Math.random() * 26 + 'a');
-				break;
-			case 2:
-				contraseña += (char) (Math.random() * 10 + '0');
-				break;
-			}
+		for (let i = 0; i <tam; i++){
+			let ramd = Math.floor(Math.random()*caracteres.length);
+			pass += caracteres.substring(ramd, ramd +1);
 		}
 
-		return contraseña;
-    }
+		return pass;
+	}	
  
 
 }
 
 let entrada = new Password(8, "ASDcv123");
-let entrada1 = new Password(9, "ASDv1234");
-
-// console.log(bul)
-
-console.log(entrada._contraseña)
-console.log(entrada._longitud)
-console.log(entrada.setLongitud())
-console.log(entrada.getLongitud())
-console.log(entrada.getContraseña())
-console.log(entrada.esFuerte())
-console.log(entrada.generarPassword())
+let entrada2 = new Password(6, "123456");
 
 
-console.log(entrada1._contraseña)
-console.log(entrada1._longitud)
-console.log(entrada1.esFuerte())
+console.log("Tu contraseña es: " + entrada._contraseña + " es fuerte: "+ entrada.esFuerte())
+console.log("Tu contraseña es: " + entrada2._contraseña + " es fuerte: "+ entrada2.esFuerte())
 
-// console.log(entrada.getContraseña())
+
+
 
   
 
