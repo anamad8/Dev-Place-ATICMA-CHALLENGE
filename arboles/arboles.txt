@@ -2,21 +2,19 @@
     La raíz es la A
 
 2. ¿Cuántos caminos diferentes de longitud tres hay?
-
+    Hay 7: ABFG, BFGH, ACJK, CJKL, CJKM, AENP, AENQ.
 
 3. ¿Es un camino la sucesión de nodos HGFBACI?
-    Hay 7 caminos: ABFG , BFGH ,ACJK,CJKL,CJKM,AENP,AENQ
+	No.Por ejemplo H no es padre de G.
 
 4. ¿Qué nodos son los ancestros de K?
-    No.Por ejemplo H no es padre de G.
-
+    Los asendente es K es: A,C, J, K.
 
 5. ¿Qué nodos son los ancestros propios de N?
-    Los asendente es N es: ACJK.
+    Los asendente es N es: A, E
 
 6. ¿Qué nodos son los descendientes propios de M?
     Ninguno.
-
 
 7. ¿Qué nodos son las hojas?
     sus nodos hojas son: H, I, D, L , M , P ,Q 
